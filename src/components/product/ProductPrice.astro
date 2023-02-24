@@ -1,0 +1,21 @@
+---
+interface Props {
+  price: number;
+  strikePrice?: number;
+  class?: string;
+}
+const { price, strikePrice, class: className } = Astro.props;
+---
+
+<div class={`flex items-center gap-4 ${className}`}>
+  <span class="font-serif font-bold text-product-lg text-aquamarine"
+    >${price}</span
+  >
+  {
+    strikePrice && (
+      <span class="line-through text-sm font-medium text-aurometal-saurus">
+        ${strikePrice}
+      </span>
+    )
+  }
+</div>

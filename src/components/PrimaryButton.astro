@@ -1,0 +1,16 @@
+---
+interface Props {
+  icon?: "cart";
+  class?: string;
+}
+const { icon, class: className } = Astro.props;
+---
+
+<button
+  class={`bg-aquamarine hover:bg-dark-aquamarine rounded-lg flex items-center justify-center gap-3 text-white text-base font-bold w-full h-12 ${
+    className ?? ""
+  }`}
+>
+  {icon && <img src={`/images/icon-${icon}.svg`} alt={icon} />}
+  <slot />
+</button>

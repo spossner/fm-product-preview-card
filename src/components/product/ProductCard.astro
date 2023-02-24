@@ -1,0 +1,36 @@
+---
+import PrimaryButton from "../PrimaryButton.astro";
+import ProductCategory from "./ProductCategory.astro";
+import ProductPrice from "./ProductPrice.astro";
+import ProductText from "./ProductText.astro";
+import ProductTitle from "./ProductTitle.astro";
+---
+
+<div
+  class="grid grid-cols-1 md:grid-cols-2 w-[343px] md:w-[600px] rounded-[10px] overflow-hidden bg-white"
+>
+  <img src="/images/image-product-mobile.jpg" alt="Chanel" class="md:hidden" />
+  <img
+    src="/images/image-product-desktop.jpg"
+    alt="Chanel"
+    class="hidden md:block"
+  />
+  <div class="p-6 md:p-8">
+    <ProductCategory>Perfume</ProductCategory>
+    <ProductTitle class="mt-3 md:mt-5">
+      Gabrielle Essence Eau De Parfum
+    </ProductTitle>
+    <ProductText class="mt-4 md:mt-6">
+      A floral, solar and voluptuous interpretation composed by Olivier Polge,
+      Perfumer-Creator for the House of CHANEL.
+    </ProductText>
+    <ProductPrice
+      price={149.99}
+      strikePrice={169.99}
+      class="mt-6 md:mt-[29px]"
+    />
+    <PrimaryButton icon="cart" class="mt-5 md:mt-[30px]">
+      Add to Cart
+    </PrimaryButton>
+  </div>
+</div>
